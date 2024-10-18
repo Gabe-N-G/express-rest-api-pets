@@ -3,6 +3,7 @@ import express from "express"
 import logger from "morgan"
 import chalk from "chalk"
 import dotenv  from "dotenv"
+import cors from "cors"
 dotenv.config()
 
 //routes go here
@@ -11,15 +12,13 @@ import petRouter from "./routes/pets.js"
 const app = express()
 const PORT = process.env.PORT || 3000;
 
-// TODO: Adding CORS middleware here.
+// Adding CORS middleware here. DONE
 app.use(express.json())
 app.use(logger("dev"))
-
+app.use(cors())
 
 // Add router DONE
 app.use('/pets', petRouter) //makes all /pets routes just start at /.
-
-
 
 //
 db.on("connected", () => {

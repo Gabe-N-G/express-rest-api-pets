@@ -1,5 +1,5 @@
 // pet schema here
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const petSchema = new mongoose.Schema({
     name: {
@@ -11,6 +11,8 @@ const petSchema = new mongoose.Schema({
       min: 0,
     },
     breed: String,
-  });
+  },
+  {timestamps: true}
+);
 
 export default mongoose.model("Pet", petSchema)

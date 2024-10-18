@@ -1,7 +1,7 @@
 //this is all in controllers in the lesson, RAUL SPECIAL
 import { Router } from "express";
 import * as controllers from "../controllers/pets.js"
-const router = router()
+const router = Router()
 
 //routes go here
 // router.get("/", (req,res)=>{}) Normal method.
